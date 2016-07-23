@@ -1,0 +1,19 @@
+{
+  "name": "consul-tls",
+  "version": "1.0.0",
+  "description": "consul-tls",
+  "main": "consul-tls.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alligo/consul-tls.git"
+  },
+  "author": "alligo@alligo.com.br",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alligo/consul-tls/issues"
+  },
+  "homepage": "https://github.com/alligo/consul-tls#readme"
+}

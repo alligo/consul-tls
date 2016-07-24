@@ -19,6 +19,7 @@ program
         .option('-f, --fqdn [value]', 'FQDN of key certificate, without last dot e.g. mydomain.com')
         .option('-c, --cert [value]', 'Path to certificate (e.g. ./folder/mydomain.crt)')
         .option('-k, --key [value]', 'Path to certificate Key (e.g. ./folder/mydomain.key)')
+        .option('-v, --debug', 'Enable verbose / debug')
         //.option('-P, --pineapple', 'Add pineapple')
         //.option('-b, --bbq-sauce', 'Add bbq sauce')
         //.option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
@@ -51,6 +52,12 @@ if (program.key) {
 //console.log('  - %s set', program.set);
 console.log('  - %s url', program.url);
 console.log('  - %s fqdn', program.fqdn);
+
+console.log('ssss', program.debug);
+
+if (program.debug) {
+  consulTls.init({debug: true});
+}
 
 if (program.set) {
   consulTls.executeSave(function (err, result) {

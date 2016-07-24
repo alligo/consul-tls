@@ -16,7 +16,7 @@ program
         .option('-g, --get', 'Get Value (default)', 1)
         .option('-s, --set', 'Set value')
         .option('-u, --url', 'Consul Host', 'http://localhost:8500')
-        .option('--fqdn [value]', 'FQDN of key certificate, without last dot (e.g. mydomain.com)')
+        .option('-f, --fqdn [value]', 'FQDN of key certificate, without last dot e.g. mydomain.com')
         .option('-c, --cert [value]', 'Path to certificate (e.g. ./folder/mydomain.crt)')
         .option('-k, --key [value]', 'Path to certificate Key (e.g. ./folder/mydomain.key)')
         //.option('-P, --pineapple', 'Add pineapple')
@@ -46,12 +46,11 @@ if (program.cert) {
 }
 
 if (program.key) {
-  console.log('  - certkey');
+  console.log('  - key');
 }
-
-console.log('  - %s get', program.get);
-console.log('  - %s set', program.set);
-
+//console.log('  - %s set', program.set);
+console.log('  - %s url', program.url);
+console.log('  - %s fqdn', program.fqdn);
 
 if (program.set) {
   consulTls.executeSave(function (err, result) {

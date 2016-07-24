@@ -25,35 +25,34 @@ program
         //.option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
         .parse(process.argv);
 
-console.log('debug:');
-if (program.get) {
-  console.log('  - get');
-}
-
-if (program.set) {
-  console.log('  - set');
-}
-
-if (program.url) {
-  console.log('  - url');
-}
-
-if (program.fqdn) {
-  console.log('  - fqdn');
-}
-
-if (program.cert) {
-  console.log('  - cert');
-}
-
-if (program.key) {
-  console.log('  - key');
-}
+//console.log('debug:');
+//if (program.get) {
+//  console.log('  - get');
+//}
+//
+//if (program.set) {
+//  console.log('  - set');
+//}
+//
+//if (program.url) {
+//  console.log('  - url');
+//}
+//
+//if (program.fqdn) {
+//  console.log('  - fqdn');
+//}
+//
+//if (program.cert) {
+//  console.log('  - cert');
+//}
+//
+//if (program.key) {
+//  console.log('  - key');
+//}
 //console.log('  - %s set', program.set);
-console.log('  - %s url', program.url);
-console.log('  - %s fqdn', program.fqdn);
+//console.log('  - %s url', program.url);
+//console.log('  - %s fqdn', program.fqdn);
 
-console.log('ssss', program.debug);
 
 if (program.debug) {
   consulTls.init({debug: true});

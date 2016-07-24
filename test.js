@@ -19,7 +19,7 @@ exec(cmd, function (error, stdout, stderr) {
   console.log(stdout);
 
 
-  var cmd = './index.js --debug --get --url http://localhost:8500 --fqdn=localhost --cert ./test/localhost.crt --key ./test/localhost.key';
+  var cmd = './index.js --debug --get --url http://localhost:8500 --fqdn=localhost --cert ./test/result-localhost.crt --key ./test/result-localhost.key';
   console.log('================================================================================');
   console.log('TEST: get');
 

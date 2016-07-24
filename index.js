@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
 /**
- * Module dependencies.
+ * 
  */
 
 var program = require('commander');
+var consulTls = require('./lib/consul-tls');
 
 program
   .version('1.0.0')
@@ -28,3 +29,4 @@ if (program.cert) console.log('  - cert');
 if (program.key) console.log('  - certkey');
 console.log('  - %s get', program.get);
 console.log('  - %s set', program.set);
+

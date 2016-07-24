@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/alligo/consul-tls/issues"
   },
-  "homepage": "https://github.com/alligo/consul-tls#readme"
+  "homepage": "https://github.com/alligo/consul-tls#readme",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
 }

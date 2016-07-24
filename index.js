@@ -25,35 +25,6 @@ program
         //.option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
         .parse(process.argv);
 
-//console.log('debug:');
-//if (program.get) {
-//  console.log('  - get');
-//}
-//
-//if (program.set) {
-//  console.log('  - set');
-//}
-//
-//if (program.url) {
-//  console.log('  - url');
-//}
-//
-//if (program.fqdn) {
-//  console.log('  - fqdn');
-//}
-//
-//if (program.cert) {
-//  console.log('  - cert');
-//}
-//
-//if (program.key) {
-//  console.log('  - key');
-//}
-//console.log('  - %s set', program.set);
-//console.log('  - %s url', program.url);
-//console.log('  - %s fqdn', program.fqdn);
-
-
 if (program.debug) {
   consulTls.init({debug: true});
 }
@@ -64,14 +35,14 @@ if (program.set) {
       console.log('ERROR:', err);
       return 1;
     }
-    console.log(result);
+    return 0;
   }, program.url, program.fqdn, program.cert, program.key);
-} else {
+} else if (program.get) {
   consulTls.executeRestore(function (err, result) {
     if (err) {
       console.log('ERROR:', err);
       return 1;
     }
-    console.log(result);
+    return 0;
   }, program.url, program.fqdn, program.cert, program.key);
 }

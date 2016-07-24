@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+/**
+ * @deprecated file, use test-mocha.js
+ */
+
 var exec = require('child_process').exec, fs = require('fs');
 
 var cmd = './index.js --set --url http://localhost:8500 --fqdn=localhost --cert ./test/localhost.crt --key ./test/localhost.key';

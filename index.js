@@ -15,7 +15,7 @@ program
         .version('1.0.0')
         .option('-g, --get', 'Get Value (default)', 1)
         .option('-s, --set', 'Set value')
-        //.option('-S, --sync', 'Syncronize files')
+        .option('-S, --sync', 'Syncronize files')
         .option('-u, --url', 'Consul Host', 'http://localhost:8500')
         .option('-f, --fqdn [value]', 'FQDN of key certificate, without last dot e.g. mydomain.com')
         .option('-c, --cert [value]', 'Path to certificate (e.g. ./folder/mydomain.crt)')

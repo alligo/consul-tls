@@ -1,4 +1,4 @@
-# Consul TLS manager v1.1.0-beta
+# Consul TLS manager v1.2.0-alpha
 Simple NodeJS script to store TLS certificates and keys to a Consul KV and
 restore to disk if modified since last check
 
@@ -33,3 +33,8 @@ Note: start a Consul on Port 8500 before run these tests
 ### Restore (test files)
 
 `./index.js --debug --get --url http://localhost:8500 --fqdn=localhost --cert ./test/result-localhost.crt --key ./test/result-localhost.key`
+
+
+### Save (test files, needs more testing)
+
+`./index.js --debug --sync --url http://localhost:8500 --fqdn=localhost --cert ./test/localhost.crt --key ./test/localhost.key`

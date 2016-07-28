@@ -15,7 +15,7 @@ $ ./index.js --help
     -g, --get           Get Value (default)
     -s, --set           Set value
     -S, --sync          Syncronize files
-    -u, --url           Consul Host
+    -u, --url [value]   Consul URL (should include protocol, host and port)
     -f, --fqdn [value]  FQDN of key certificate, without last dot e.g. mydomain.com
     -c, --cert [value]  Path to certificate (e.g. ./folder/mydomain.crt)
     -k, --key [value]   Path to certificate Key (e.g. ./folder/mydomain.key)
@@ -24,7 +24,7 @@ $ ./index.js --help
 
 ## Examples
 
-Note: start a Consul on Port 8500 before run these tests
+Note: the Consul URL must be valid and working
 
 ### Save (test files)
 
@@ -35,6 +35,6 @@ Note: start a Consul on Port 8500 before run these tests
 `./index.js --debug --get --url http://localhost:8500 --fqdn=localhost --cert ./test/result-localhost.crt --key ./test/result-localhost.key`
 
 
-### Save (test files, needs more testing)
+### Sync (test files, needs more testing)
 
 `./index.js --debug --sync --url http://localhost:8500 --fqdn=localhost --cert ./test/localhost.crt --key ./test/localhost.key`

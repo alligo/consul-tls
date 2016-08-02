@@ -11,7 +11,7 @@ $ node index.js operation consulUrl FQDN crtPath keyPath
 
 ## Examples
 
-Note: start a Consul on Port 8500 before run these tests
+Note: the Consul URL must be valid and working
 
 ### Save (test files)
 

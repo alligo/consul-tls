@@ -1,15 +1,35 @@
 {
-  "name": "consul-tls",
-  "version": "1.0.0",
-  "description": "consul-tls",
+  "name": "@alligo/consul-tls",
+  "version": "0.2.0",
+  "description": "",
+  "bin": "index.js",
   "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha ./test-mocha.js"
+    "stop-consul": "./test/server/stop.sh",
+    "prestart-consul": "npm run stop-consul",
+    "start-consul": "./test/server/init.sh",
+    "eslint": "eslint index.js",
+    "david": "david",
+    "mocha": "mocha --reporter spec",
+    "cover": "istanbul cover _mocha -- -R spec test/* && istanbul check-coverage --statement 100 --branch 100 --line 100 --function 100",
+    "pretest": "npm run eslint && npm run david && npm run start-consul",
+    "test": "npm run mocha && npm run cover",
+    "posttest": "npm run stop-consul",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
+    "preversion": "git pull && rm -rf ./node_modules/ && npm install && npm test",
+    "postversion": "git push && npm publish --access=public && git push --tags"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alligo/consul-tls.git"
   },
+  "pre-commit": [
+    "precommit-msg",
+    "test"
+  ],
   "author": "alligo@alligo.com.br",
   "license": "MIT",
   "bugs": {
@@ -17,11 +37,15 @@
   },
   "homepage": "https://github.com/alligo/consul-tls#readme",
   "dependencies": {
-    "commander": "^2.9.0",
-    "request": "^2.74.0"
+    "got": "^6.3.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^2.5.3"
+    "coveralls": "^2.11.11",
+    "david": "^8.0.0",
+    "eslint": "^3.1.1",
+    "istanbul": "^0.4.4",
+    "mocha": "^3.0.0",
+    "pre-commit": "^1.1.3"
   }
 }

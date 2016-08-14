@@ -26,7 +26,8 @@ consulTls
 	.checkParams({ operation, consulUrl, fqdn, cert, certSecret })
 	.then(consulTls.init)
 	.catch((moduleError) => {
-		throw new Error((moduleError || 'Unknown Error'));
+		console.log((moduleError || 'Unknown Error'));
+		process.exit(1);
 	})
 	.then(() => {
 		process.exit(0);
